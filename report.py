@@ -11,6 +11,7 @@ pd.set_option('display.max_columns',40)
 pd.set_option('display.max_colwidth',100)
 report=pd.read_csv('mochi_report.csv',parse_dates=['created','updated','checkin_date'], infer_datetime_format=True)
 report = userstat[['id', 'created', 'updated', 'user_id', 'community_id','data']] 
+report.set_index('id',inplace = True)
 print(report.head())
 print(report.info())
 #print(userstat['data'].head())
